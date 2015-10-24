@@ -58,7 +58,7 @@ public class CoolWeatherDB {
 		return list;
 	}
 	
-	public void saceCity(City city){
+	public void saveCity(City city){
 		if(city!=null){
 			ContentValues values=new ContentValues();
 			values.put("city_name", city.getCityName());
@@ -80,6 +80,7 @@ public class CoolWeatherDB {
 				city.setCityCode(cursor.getString(cursor.getColumnIndex("city_code")));
 				city.setProvinceId(provinceId);
 			} while (cursor.moveToNext());
+			System.out.println(list);
 		}
 		
 		return list;
